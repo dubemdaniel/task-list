@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+.wrapper{
+    margin: 1rem auto;
+    padding: 2rem;
+}
+.my-task h2{
+    border-left: 3px solid orange;
+    padding-left: 1rem;
+}
+div{
+    margin: .2rem 0px;
+    padding: .2rem 0px;
+    position: relative;
+}
+
+/* input task */
+/* ======================= */
+input{
+    width: 100%;
+}
+.inputBox{
+    margin: 2rem 0px;
+}
+#taskInput{
+    position: absolute;
+    background-color: transparent;
+    outline: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.467);
+    margin-bottom: 2rem;
+    color: black;
+}
+#newTask{
+    position: absolute;
+    transition: ease-in-out .2s;
+    left: 1px;
+    top: 1px;
+    
+}
+
+/* .inputBox input:focus ~ #newTask
+{
+    transform: translateX(0px) translateY(-20px);
+    color:rgba(0, 0, 0, 0.431);
+
+} */
+
+
+#submitTask{
+    outline: none;
+    border: none;
+    background-color: rgba(255, 166, 0, 0.494);
+    padding: .6rem 0px;
+    cursor: pointer;
+
+}
+
+div ul li{
+    display: grid;
+    grid-template-columns:3fr 1fr ;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.515);
+}
+/* ======================================
+     remove task list */
+
+
+#delete {
+    margin: 0px auto;
+    text-align: right;
+    padding-left: 2rem;
+    /* padding-top: 1rem; */
+}
+div ul li a img{
+    width: 2rem;
+    margin: 0px auto;
+}
+div ul li {
+    list-style-type: none;
+    padding-bottom: -10px;
+}
+div ul li h4{
+    padding-top: .5rem;
+}
+
+/*   clear all task */
+/* ====================================== */
+.clearListBox{
+    margin: 1.6rem 0px;
+}
+#clearList{
+    background-color: orange;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+/* ==================================================== */
+/* for tablet desktop view */
+@media  (min-width: 450px) {
+    .wrapper{
+        width: 350px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.334);
+    }
+}
