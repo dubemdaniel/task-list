@@ -3,9 +3,9 @@ const taskInputUI = document.getElementById('taskInput')
 const submitTaskUI = document.getElementById('submitTask')
 const clearList = document.querySelector('.clearListBox')
 const listCollection = document.getElementById('list_collection')
-const taskSubmit = document.getElementById('task-form')
 const warning = document.querySelector('.warning')
 
+clearList.style.display = 'none'
 
 // ====================================
 // load event listeners
@@ -17,57 +17,102 @@ loadEventListeners()
 
 function loadEventListeners(){
     // add submit event
+    document.getElementById('task-form').addEventListener('submit', inputTask)
 
-    taskSubmit.addEventListener('submit', inputTask);
-    taskInputUI.addEventListener('click', taskInput)
+    taskInputUI.addEventListener('mouseup', taskInput)
 
-
+    clearList.addEventListener('click', clearAll)
 }
 // input task
 
 function inputTask(e){
-    if(taskInputUI.value === ''){
-        console.log('add a task boss');
-        warnings();
-        
-        // li.style.display = 'none'
-    }
-    // else {
-    //     console.log('your task have been added')
-    // }
-    
-    // create element
+    const taskInputUI = document.getElementById('taskInput')
+    const clearList = document.querySelector('.clearListBox')
     const li = document.createElement('li')
 
-    const h4 = document.createElement('h4')
+    if(taskInputUI.value === ''){
+        console.log('add a task boss');
+       
+            warnings()
+        
+        li.style.display = 'none'
+    }
+    else {
+        //     console.log('your task have been added')
+        // creating li elements starts here
+        // ===========================================================
+        // const li = document.createElement('li')
 
-    const link = document.createElement('a')
+        const h4 = document.createElement('h4')
+        // setTimeout(warnings(),300);
+        const link = document.createElement('a')
 
-    h4.appendChild(document.createTextNode(taskInputUI.value))
+        link.id = 'delete'
 
-    li.appendChild(h4)
+        h4.appendChild(document.createTextNode(taskInputUI.value))
 
-    li.appendChild(link)
+        li.appendChild(h4)
+
+        li.appendChild(link)
 
 
-    link.innerHTML = '<img src="/cancel.png">'
+        link.innerHTML = '<img src="/cancel.png">' 
+    
+        link.addEventListener('click', listRemove )
 
-    listCollection.appendChild(li)
+        listCollection.appendChild(li)
+
+        warningsU()
+    }
+    
+    // creating li element ends here
+    // ==========================================================
 
     taskInputUI.value = ''
 
-    e.preventDefault();
+    clearList.style.display = 'block'
+
+
 }
 
-
-function warnings() {
-    if (warning.textContent) {
-
+function clearAll(e) {
+    while (listCollection.firstChild) {
+       if (confirm('are you sure you want to clear list??')){
+            listCollection.removeChild(listCollection.firstChild)
+             clearList.style.display = 'none'
+       }
     }
-    warning.appendChild(document.createTextNode("please input a task"));
+    e.preventDefault
+}
+
+// error message if functions
+// =========================================
+function warnings() {
+const warning = document.querySelector('.warning')
+
+    warning.textContent = "please input a task"
+
     warning.style.color = 'red'
 
-    // e.preventDefault
+}
+//  error message else function
+// ===========================================
+function warningsU() {
+
+    const warning = document.querySelector('.warning')
+
+    warning.textContent = ""
+   
+}
+
+// list remove function
+// ===============================================
+function listRemove(e) {
+    if (e.target.id ='delete') {
+        e.target.parentElement.parentElement.remove()
+    }
+
+    e.preventDefault()
 }
 
 function taskInput(e) {

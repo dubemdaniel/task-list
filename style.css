@@ -61,9 +61,11 @@ input{
 
 div ul li{
     display: grid;
-    grid-template-columns:3fr 1fr ;
+    grid-template-columns:4fr 1fr ;
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.515);
+    list-style-type: none;
+    padding-bottom: -10px;
 }
 /* ======================================
      remove task list */
@@ -72,16 +74,16 @@ div ul li{
 #delete {
     margin: 0px auto;
     text-align: right;
-    padding-left: 2rem;
-    /* padding-top: 1rem; */
+}
+div ul li a {
+    width: 1rem;
 }
 div ul li a img{
     width: 2rem;
     margin: 0px auto;
-}
-div ul li {
-    list-style-type: none;
-    padding-bottom: -10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
 }
 div ul li h4{
     padding-top: .5rem;
@@ -93,11 +95,11 @@ div ul li h4{
     margin: 1.6rem 0px;
 }
 #clearList{
-    background-color: orange;
+    background-color: rgba(255, 166, 0, 0.634);
     padding: .5rem 1rem;
     text-decoration: none;
-    color: white;
-    font-weight: 600;
+    color: black;
+    font-weight: 500;
 }
 
 /* ==================================================== */
