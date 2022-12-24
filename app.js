@@ -6,6 +6,7 @@ const listCollection = document.getElementById('list_collection')
 const warning = document.querySelector('.warning')
 const li = document.createElement('li')
 
+
 clearList.style.display = 'none'
 
 // ====================================
@@ -17,38 +18,35 @@ loadEventListeners()
 // call all event listeners
 
 function loadEventListeners(){
-    document.addEventListener('DOMcontentLoaded', loadTasks)
+    // document.addEventListener('DOMcontentLoaded', loadTasks)
 
     // add submit event
-    document.getElementById('task-form').addEventListener('submit', inputTask)
 
     taskInputUI.addEventListener('mouseup', taskInput)
 
-    clearList.addEventListener('click', clearAll)
+    // clearList.addEventListener('click', clearAll)
+
+    document.getElementById('task-form').addEventListener('submit', inputTask)
 
 }
 // input task
 
 function inputTask(e){
-    const taskInputUI = document.getElementById('taskInput')
-    const clearList = document.querySelector('.clearListBox')
+
+    const link = document.createElement('a')
+
 
     if(taskInputUI.value === ''){
         console.log('add a task boss');
        
-        warnings()
+        // warnings()
         
-        li.style.display = 'none'
+        // li.style.display = 'none'
     }
     else {
-        //     console.log('your task have been added')
-        //      creating li elements starts here
-        // ===========================================================
-        // const li = document.createElement('li')
 
         const h4 = document.createElement('h4')
 
-        const link = document.createElement('a')
 
         link.id = 'delete'
 
@@ -61,55 +59,58 @@ function inputTask(e){
 
         link.innerHTML = '<img src="/cancel.png">' 
     
-        link.addEventListener('click', listRemove )
 
         listCollection.appendChild(li)
 
-        warningsU()
+        // warningsU()
+
+        clearList.style.display = 'block'
+
 
     }
     
     // creating li element ends here
     // ==========================================================
 
+    link.addEventListener('click', listRemove )
+    
+
+    // addToLocalStorage((taskInputUI.value))
+
     taskInputUI.value = ''
-
-    clearList.style.display = 'block'
-
-    addToLocalStorage((taskInputUI.value))
 
 }
 // creating the clearAll funtion
 // ==========================================
-function clearAll(e) {
-    while (listCollection.firstChild) {
-       if (confirm('are you sure you want to clear list??')){
-            listCollection.removeChild(listCollection.firstChild)
-             clearList.style.display = 'none'
-       }
-    }
-    e.preventDefault
-}
+// function clearAll(e) {
+//     while (listCollection.firstChild) {
+//        if (confirm('are you sure you want to clear list??')){
+//             listCollection.removeChild(listCollection.firstChild)
+//              clearList.style.display = 'none'
+//        }
+//     }
+//     e.preventDefault
+// }
 
 // error message if functions
 // =========================================
-function warnings() {
-const warning = document.querySelector('.warning')
+// function warnings() {
+// const warning = document.querySelector('.warning')
 
-    warning.textContent = "please input a task"
+//     warning.textContent = "please input a task"
 
-    warning.style.color = 'red'
+//     warning.style.color = 'red'
 
-}
+// }
 //  error message else function
 // ===========================================
-function warningsU() {
+// function warningsU() {
 
-    const warning = document.querySelector('.warning')
+//     const warning = document.querySelector('.warning')
 
-    warning.textContent = ""
+//     warning.textContent = ""
    
-}
+// }
 
 // list remove function
 // ===============================================
@@ -124,52 +125,52 @@ function listRemove(e) {
 // adding items to local storage function
 // ============================================
 
-function addToLocalStorage(task){
-    let tasks;
-    if (localStorage.getItem('tasks') === null) {
-        tasks = []
-    }else{
-        tasks = JSON.parse(localStorage.getItem('tasks'))
-    }
+// function addToLocalStorage(task){
+//     let tasks;
+//     if (localStorage.getItem('tasks') === null) {
+//         tasks = []
+//     }else{
+//         tasks = JSON.parse(localStorage.getItem('tasks'))
+//     }
 
-    tasks.push(task)
+//     tasks.push(task)
 
-    localStorage.setItem('tasks', JSON.stringify(tasks))
-}
+//     localStorage.setItem('tasks', JSON.stringify(tasks))
+// }
 
-function loadTasks(){
-    console.log('loaded')
+// function loadTasks(){
+//     console.log('loaded')
 
-    let tasks;
-    if (localStorage.getItem('tasks') === null) {
-        tasks = []
-    }else{
-        tasks = JSON.parse(localStorage.getItem('tasks'))
-    }
+//     let tasks;
+//     if (localStorage.getItem('tasks') === null) {
+//         tasks = []
+//     }else{
+//         tasks = JSON.parse(localStorage.getItem('tasks'))
+//     }
     
-    tasks.forEach(function(task){
-        const h4 = document.createElement('h4')
+//     tasks.forEach(function(task){
+//         const h4 = document.createElement('h4')
 
-        const link = document.createElement('a')
+//         const link = document.createElement('a')
 
-        link.id = 'delete'
+//         link.id = 'delete'
 
-        h4.appendChild(document.createTextNode(task))
+//         h4.appendChild(document.createTextNode(task))
 
-        li.appendChild(h4)
+//         li.appendChild(h4)
 
-        li.appendChild(link)
+//         li.appendChild(link)
 
 
-        link.innerHTML = '<img src="/cancel.png">' 
+//         link.innerHTML = '<img src="/cancel.png">' 
     
-        link.addEventListener('click', listRemove )
+//         link.addEventListener('click', listRemove )
 
-        listCollection.appendChild(li)
-    });
+//         listCollection.appendChild(li)
+//     });
 
 
-}
+// }
 
 function taskInput(e) {
     if (taskInputUI.value.length > 0){
@@ -184,8 +185,4 @@ function taskInput(e) {
 
 }
 
-
-
-    // }else if (taskInputUI.value.length <= 0 || taskInputUI.onfocus === false){
-    //     document.getElementById('newTask').style.transform = 'translateX(0px) translateY(40px)';
-    //     console.log('jhgfhfg')
+// end

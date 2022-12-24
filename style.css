@@ -76,6 +76,7 @@ div ul li{
     text-align: right;
 }
 div ul li a {
+    cursor: pointer;
     width: 1rem;
 }
 div ul li a img{
