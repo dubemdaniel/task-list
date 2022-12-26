@@ -18,7 +18,6 @@ loadEventListeners()
 // call all event listeners
 
 function loadEventListeners(){
-    // document.addEventListener('DOMcontentLoaded', loadTasks)
 
     // add submit event
 
