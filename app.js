@@ -119,6 +119,7 @@ function listRemove(e) {
     }
 
     e.preventDefault()
+    
 }
 
 // adding items to local storage function
