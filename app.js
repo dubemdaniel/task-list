@@ -182,5 +182,4 @@ function taskInput(e) {
 
     e.preventDefault();
     }
-
 }
