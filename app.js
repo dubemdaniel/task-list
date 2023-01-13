@@ -168,8 +168,6 @@ function listRemove(e) {
 
 //         listCollection.appendChild(li)
 //     });
-
-
 // }
 
 function taskInput(e) {
