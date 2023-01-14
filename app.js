@@ -64,8 +64,6 @@ function inputTask(e){
         // warningsU()
 
         clearList.style.display = 'block'
-
-
     }
     
     // creating li element ends here
@@ -77,7 +75,6 @@ function inputTask(e){
     // addToLocalStorage((taskInputUI.value))
 
     taskInputUI.value = ''
-
 }
 // creating the clearAll funtion
 // ==========================================
