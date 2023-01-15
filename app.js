@@ -157,7 +157,6 @@ function listRemove(e) {
 
 //         li.appendChild(link)
 
-
 //         link.innerHTML = '<img src="/cancel.png">' 
     
 //         link.addEventListener('click', listRemove )
