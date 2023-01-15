@@ -26,7 +26,6 @@ function loadEventListeners(){
     // clearList.addEventListener('click', clearAll)
 
     document.getElementById('task-form').addEventListener('submit', inputTask)
-
 }
 // input task
 
