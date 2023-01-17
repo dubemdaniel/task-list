@@ -33,7 +33,6 @@ function inputTask(e){
 
     const link = document.createElement('a')
 
-
     if(taskInputUI.value === ''){
         console.log('add a task boss');
        
