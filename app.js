@@ -28,7 +28,6 @@ function loadEventListeners(){
     document.getElementById('task-form').addEventListener('submit', inputTask)
 }
 // input task
-
 function inputTask(e){
 
     const link = document.createElement('a')
