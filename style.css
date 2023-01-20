@@ -42,21 +42,12 @@ input{
     
 }
 
-/* .inputBox input:focus ~ #newTask
-{
-    transform: translateX(0px) translateY(-20px);
-    color:rgba(0, 0, 0, 0.431);
-
-} */
-
-
 #submitTask{
     outline: none;
     border: none;
     background-color: rgba(255, 166, 0, 0.494);
     padding: .6rem 0px;
     cursor: pointer;
-
 }
 
 div ul li{
