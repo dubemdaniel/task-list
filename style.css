@@ -39,7 +39,6 @@ input{
     transition: ease-in-out .2s;
     left: 1px;
     top: 1px;
-    
 }
 
 #submitTask{
@@ -60,7 +59,6 @@ div ul li{
 }
 /* ======================================
      remove task list */
-
 
 #delete {
     margin: 0px auto;
